@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To'rabek's Uzbekistan Tours - Real, Raw, Fun Adventures</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Animate on Scroll (AOS) Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <style>
+      /* Custom styles for the new design */
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: #fdfdfd;
+        color: #2d3748; /* A softer black for text */
+      }
+
+      /* Gradient Text */
+      .gradient-text {
+        background: linear-gradient(45deg, #f59e0b, #fbbf24);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      /* Custom Animated Gradient Button */
+      .gradient-button {
+        background-size: 200% auto;
+        background-image: linear-gradient(
+          to right,
+          #f59e0b 0%,
+          #fcd34d 50%,
+          #f59e0b 100%
+        );
+        transition: background-position 0.5s ease;
+      }
+      .gradient-button:hover {
+        background-position: right center;
+      }
+
+      /* Glassmorphism effect for the navbar */
+      .glass-nav {
+        background-color: rgba(255, 255, 255, 0.7) !important;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(200, 200, 200, 0.2);
+      }
+
+      /* Card hover effect */
+      .card-hover {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .card-hover:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1),
+          0 8px 10px -6px rgb(0 0 0 / 0.1);
+      }
+
+      /* Style for star ratings */
+      .star-rating svg {
+        width: 1.25rem;
+        height: 1.25rem;
+        color: #f59e0b; /* Amber color for stars */
+        display: inline;
+      }
+    </style>
+  </head>
+  <body class="antialiased">
+    <!-- Header & Navigation -->
+    <header
+      id="header"
+      class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+    >
+      <nav
+        class="container mx-auto px-6 py-4 flex justify-between items-center"
+      >
+        <a
+          href="#home"
+          class="text-2xl font-bold tracking-tight text-gray-800"
+          id="nav-logo"
+          >To'rabek</a
+        >
+        <div class="hidden md:flex items-center space-x-8">
+          <a
+            href="#about"
+            class="text-gray-600 hover:text-amber-500 transition-colors font-medium"
+            id="nav-link-1"
+            >About</a
+          >
+          <a
+            href="#philosophy"
+            class="text-gray-600 hover:text-amber-500 transition-colors font-medium"
+            id="nav-link-2"
+            >Philosophy</a
+          >
+          <a
+            href="#tours"
+            class="text-gray-600 hover:text-amber-500 transition-colors font-medium"
+            id="nav-link-3"
+            >Tours</a
+          >
+          <a
+            href="#testimonials"
+            class="text-gray-600 hover:text-amber-500 transition-colors font-medium"
+            id="nav-link-4"
+            >Testimonials</a
+          >
+          <a
+            href="#contact"
+            class="gradient-button text-white font-bold px-5 py-2 rounded-lg shadow-md"
+            >Contact</a
+          >
+        </div>
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-button" class="md:hidden text-gray-800">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16m-7 6h7"
+            />
+          </svg>
+        </button>
+      </nav>
+      <!-- Mobile Menu -->
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden bg-white/95 backdrop-blur-sm shadow-lg"
+      >
+        <a
+          href="#about"
+          class="block text-gray-800 text-center py-3 hover:bg-amber-50 transition-colors"
+          >About</a
+        >
+        <a
+          href="#philosophy"
+          class="block text-gray-800 text-center py-3 hover:bg-amber-50 transition-colors"
+          >Philosophy</a
+        >
+        <a
+          href="#tours"
+          class="block text-gray-800 text-center py-3 hover:bg-amber-50 transition-colors"
+          >Tours</a
+        >
+        <a
+          href="#testimonials"
+          class="block text-gray-800 text-center py-3 hover:bg-amber-50 transition-colors"
+          >Testimonials</a
+        >
+        <a
+          href="#contact"
+          class="block text-white text-center py-4 bg-amber-500 hover:bg-amber-600 font-semibold transition-colors"
+          >Contact</a
+        >
+      </div>
+    </header>
+
+    <main>
+      <!-- Section 1: Hero / Homepage -->
+      <section
+        id="home"
+        class="relative min-h-screen flex items-center justify-center text-center overflow-hidden"
+      >
+        <!-- Subtle Gradient Background -->
+        <div
+          class="absolute inset-0 bg-gradient-to-br from-amber-50 via-white to-white"
+        ></div>
+
+        <div class="relative z-10 px-4 pt-24 pb-12">
+          <h1
+            class="text-5xl md:text-7xl lg:text-8xl font-black uppercase tracking-tighter text-gray-800"
+            data-aos="fade-down"
+          >
+            Forget the tour bus.
+          </h1>
+          <h2
+            class="text-5xl md:text-7xl lg:text-8xl font-black uppercase tracking-tighter gradient-text mt-2"
+            data-aos="fade-down"
+            data-aos-delay="200"
+          >
+            See the real Uzbekistan.
+          </h2>
+          <p
+            class="mt-8 max-w-2xl mx-auto text-lg md:text-xl text-gray-500"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
+            Tired of the same old script? I'm To'rabek, and I do things
+            differently. I'm your key to the Uzbekistan you won't find in
+            guidebooks—the hidden alleys, the real conversations, the
+            unforgettable flavors, and the epic landscapes. This isn't just a
+            tour. It's an adventure, built from the ground up, just for you.
+          </p>
+          <div data-aos="fade-up" data-aos-delay="600">
+            <a
+              href="#contact"
+              class="mt-10 inline-block gradient-button text-white font-bold text-lg py-4 px-10 rounded-lg shadow-xl transform hover:scale-105 transition-transform"
+            >
+              LET'S BUILD YOUR TRIP
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 2: About Me -->
+      <section id="about" class="py-20 md:py-32 bg-white">
+        <div class="container mx-auto px-6">
+          <div class="grid md:grid-cols-5 gap-12 items-center">
+            <div class="md:col-span-2" data-aos="fade-right">
+              <img
+                src="/image.png"
+                onerror="this.onerror=null;this.src='https://placehold.co/600x800/e2e8f0/1f2937?text=Image+Error';"
+                alt="A portrait of To'rabek, your guide"
+                class="rounded-lg shadow-2xl w-full h-auto object-cover"
+              />
+            </div>
+            <div class="md:col-span-3" data-aos="fade-left">
+              <h2 class="text-4xl md:text-5xl font-bold text-gray-800">
+                Who's Your Guide?
+              </h2>
+              <p class="mt-6 text-xl font-semibold text-amber-500">
+                I'm To'rabek — born and raised in Uzbekistan, this land runs in
+                my veins.
+              </p>
+              <p class="mt-4 text-lg text-gray-600">
+                Tourism manager, Tour guide, Tour organizer, and your personal
+                friend in this incredible country.
+              </p>
+              <p class="mt-4 text-lg text-gray-600">
+                From hidden teahouses to sacred mosques, from ancient streets to
+                mountain trails — I've walked 'em all.
+              </p>
+              <h3 class="mt-8 text-2xl font-bold text-gray-800">
+                Why does that matter to you?
+              </h3>
+              <p class="mt-2 text-lg text-gray-600">
+                Because I won’t just show you places — I’ll show you stories.
+                This ain’t a rehearsed tour. It’s real. It’s local. It’s
+                unforgettable.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 3: Philosophy -->
+      <section id="philosophy" class="py-20 md:py-32 bg-gray-50">
+        <div class="container mx-auto px-6 text-center">
+          <h2 class="text-4xl md:text-5xl font-bold" data-aos="fade-up">
+            No Fluff. No Tourist Traps.
+          </h2>
+          <p
+            class="mt-4 text-xl text-amber-500"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            Just Real Adventure. This is my promise.
+          </p>
+          <div class="mt-16 grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-left">
+            <!-- Philosophy Cards -->
+            <div
+              class="bg-white p-8 rounded-xl shadow-lg card-hover"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <h3 class="text-xl font-bold">Real Connections</h3>
+              <p class="mt-2 text-gray-600">
+                We're not just observing. We're participating. Share tea with
+                families, haggle in the bazaar, and leave with stories, not just
+                photos.
+              </p>
+            </div>
+            <div
+              class="bg-white p-8 rounded-xl shadow-lg card-hover"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
+              <h3 class="text-xl font-bold">Total Flexibility</h3>
+              <p class="mt-2 text-gray-600">
+                Feel like staying longer at a stunning mosaic? Want to ditch the
+                plan for the best coffee in Tashkent? Done. This is your trip.
+              </p>
+            </div>
+            <div
+              class="bg-white p-8 rounded-xl shadow-lg card-hover"
+              data-aos="fade-up"
+              data-aos-delay="400"
+            >
+              <h3 class="text-xl font-bold">Hidden Gems</h3>
+              <p class="mt-2 text-gray-600">
+                Sure, we'll see the big hitters. But I'll also take you to the
+                quiet courtyards, rooftop views, and workshops where masters are
+                at work.
+              </p>
+            </div>
+            <div
+              class="bg-white p-8 rounded-xl shadow-lg card-hover"
+              data-aos="fade-up"
+              data-aos-delay="500"
+            >
+              <h3 class="text-xl font-bold">A Real Friend</h3>
+              <p class="mt-2 text-gray-600">
+                Forget the awkward guide-tourist dynamic. By day two, we'll just
+                be two people exploring one of the most incredible places on
+                earth.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 4: Tours -->
+      <section id="tours" class="py-20 md:py-32 bg-white">
+        <div class="container mx-auto px-6">
+          <div class="text-center mb-16">
+            <h2
+              class="text-4xl md:text-5xl font-bold text-gray-800"
+              data-aos="fade-up"
+            >
+              Choose Your Adventure
+            </h2>
+            <p
+              class="mt-4 max-w-2xl mx-auto text-lg text-gray-600"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              These aren't fixed packages—they're starting points. We can mix,
+              match, and create something completely new.
+            </p>
+          </div>
+          <div class="grid lg:grid-cols-3 gap-8">
+            <!-- Tour Cards -->
+            <div
+              class="bg-gray-50 rounded-xl shadow-lg overflow-hidden flex flex-col card-hover"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <div class="p-8 flex-grow">
+                <h3 class="text-2xl font-bold text-amber-600">
+                  The Silk Road Remix
+                </h3>
+                <p class="text-sm text-gray-500 font-medium mt-1">7-10 Days</p>
+                <p class="mt-4 text-gray-700">
+                  The legendary cities, but done our way. We hit the must-see
+                  monuments when the light is perfect and the crowds are thin.
+                </p>
+              </div>
+              <div class="bg-gray-100 p-6">
+                <h4 class="font-semibold text-gray-800">Perfect For:</h4>
+                <p class="text-gray-600">
+                  First-timers who want the iconic experience with an authentic,
+                  insider twist.
+                </p>
+              </div>
+            </div>
+            <div
+              class="bg-gray-50 rounded-xl shadow-lg overflow-hidden flex flex-col card-hover"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
+              <div class="p-8 flex-grow">
+                <h3 class="text-2xl font-bold text-amber-600">
+                  Tashkent: Concrete & Culture
+                </h3>
+                <p class="text-sm text-gray-500 font-medium mt-1">2-3 Days</p>
+                <p class="mt-4 text-gray-700">
+                  Urban exploration. Dive into Soviet-modernist architecture,
+                  ride the world's most beautiful metro, and eat the best *plov*
+                  of your life.
+                </p>
+              </div>
+              <div class="bg-gray-100 p-6">
+                <h4 class="font-semibold text-gray-800">Perfect For:</h4>
+                <p class="text-gray-600">
+                  City lovers, photographers, and those looking to see the
+                  modern heart of Central Asia.
+                </p>
+              </div>
+            </div>
+            <div
+              class="bg-gray-50 rounded-xl shadow-lg overflow-hidden flex flex-col card-hover"
+              data-aos="fade-up"
+              data-aos-delay="400"
+            >
+              <div class="p-8 flex-grow">
+                <h3 class="text-2xl font-bold text-amber-600">
+                  Mountains & Nomad Soul
+                </h3>
+                <p class="text-sm text-gray-500 font-medium mt-1">4-5 Days</p>
+                <p class="mt-4 text-gray-700">
+                  Get out of the city and into epic nature. We'll head for the
+                  hills, stay in guesthouses, and see a side of Uzbekistan most
+                  people miss.
+                </p>
+              </div>
+              <div class="bg-gray-100 p-6">
+                <h4 class="font-semibold text-gray-800">Perfect For:</h4>
+                <p class="text-gray-600">
+                  Adventurous spirits, hikers, and anyone needing to disconnect
+                  and breathe fresh air.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 5: Testimonials -->
+      <section id="testimonials" class="py-20 md:py-32 bg-gray-50">
+        <div class="container mx-auto px-6">
+          <div class="text-center mb-16">
+            <h2
+              class="text-4xl md:text-5xl font-bold text-gray-800"
+              data-aos="fade-up"
+            >
+              What The Adventurers Are Saying
+            </h2>
+          </div>
+          <div class="grid md:grid-cols-2 gap-8">
+            <!-- Testimonial Cards -->
+            <div class="bg-white p-8 rounded-xl shadow-lg" data-aos="fade-up">
+              <div class="star-rating">...</div>
+              <!-- Stars SVG here -->
+              <p class="mt-4 text-gray-600 italic">
+                "Booking with To'rabek was like having a key to the entire
+                country. He's less of a guide and more of a cool,
+                super-knowledgeable friend... 100% the only way to see
+                Uzbekistan."
+              </p>
+              <p class="mt-4 font-bold text-right text-gray-800">
+                - Chloe, Australia
+              </p>
+            </div>
+            <div
+              class="bg-white p-8 rounded-xl shadow-lg"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <div class="star-rating">...</div>
+              <!-- Stars SVG here -->
+              <p class="mt-4 text-gray-600 italic">
+                "We told To'rabek we were into Soviet-era architecture and local
+                markets. He built the entire trip around our interests. The
+                flexibility was incredible. Unforgettable."
+              </p>
+              <p class="mt-4 font-bold text-right text-gray-800">
+                - Mark & Sarah, Canada
+              </p>
+            </div>
+            <div class="bg-white p-8 rounded-xl shadow-lg" data-aos="fade-up">
+              <div class="star-rating">...</div>
+              <!-- Stars SVG here -->
+              <p class="mt-4 text-gray-600 italic">
+                "His passion for Uzbekistan's history and culture is infectious.
+                We didn't just see monuments; we met artisans, shared tea with
+                families, and had real conversations about life."
+              </p>
+              <p class="mt-4 font-bold text-right text-gray-800">- David, UK</p>
+            </div>
+            <div
+              class="bg-white p-8 rounded-xl shadow-lg"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <div class="star-rating">...</div>
+              <!-- Stars SVG here -->
+              <p class="mt-4 text-gray-600 italic">
+                "To'rabek gave us the adventure of a lifetime. From Samarkand to
+                the mountains, every day was perfectly planned yet felt
+                completely spontaneous. He's a legend."
+              </p>
+              <p class="mt-4 font-bold text-right text-gray-800">
+                - Ben and Maria, USA
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 6: Contact -->
+      <section id="contact" class="py-20 md:py-32 bg-white">
+        <div class="container mx-auto px-6 text-center">
+          <h2
+            class="text-4xl md:text-5xl font-bold gradient-text"
+            data-aos="fade-up"
+          >
+            Let's Make It Happen.
+          </h2>
+          <p
+            class="mt-4 max-w-2xl mx-auto text-lg text-gray-600"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            Ready for the real deal? The best way to start is with a real
+            conversation.
+          </p>
+          <p
+            class="mt-8 max-w-2xl mx-auto text-lg text-gray-600"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            Send me a message with a bit about yourself, what you're looking
+            for, and what dates you're thinking of. We'll set up a quick video
+            call to build your perfect Uzbekistan adventure.
+          </p>
+          <div data-aos="fade-up" data-aos-delay="300">
+            <a
+              href="mailto:torabekazimovich@gmail.com"
+              class="mt-12 inline-block gradient-button text-white font-bold text-lg py-4 px-10 rounded-lg shadow-xl transform hover:scale-105 transition-transform"
+            >
+              Start the Conversation
+            </a>
+          </div>
+          <div class="mt-8 flex flex-col items-center space-y-4">
+            <a
+              href="https://wa.me/+998932281915"
+              target="_blank"
+              rel="noopener"
+              class="inline-flex items-center gradient-button text-white font-bold text-lg py-4 px-10 rounded-lg shadow-xl transform hover:scale-105 transition-transform"
+              aria-label="Contact via WhatsApp"
+            >
+              <svg
+                class="w-6 h-6 mr-3"
+                fill="currentColor"
+                viewBox="0 0 32 32"
+                aria-hidden="true"
+              >
+                <path
+                  d="M16 3C9.373 3 4 8.373 4 15c0 2.65.87 5.11 2.36 7.13L4 29l7.13-2.36A11.93 11.93 0 0 0 16 27c6.627 0 12-5.373 12-12S22.627 3 16 3zm0 22c-1.92 0-3.77-.5-5.39-1.45l-.38-.22-4.23 1.4 1.4-4.23-.22-.38A9.96 9.96 0 0 1 6 15c0-5.514 4.486-10 10-10s10 4.486 10 10-4.486 10-10 10zm5.07-7.75c-.28-.14-1.65-.81-1.9-.9-.25-.09-.43-.14-.61.14-.18.28-.7.9-.86 1.08-.16.18-.32.2-.6.07-.28-.14-1.18-.44-2.25-1.4-.83-.74-1.39-1.65-1.55-1.93-.16-.28-.02-.43.12-.57.13-.13.28-.32.42-.48.14-.16.18-.28.28-.46.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.01-.22-.53-.45-.46-.61-.47-.16-.01-.34-.01-.52-.01-.18 0-.48.07-.73.34-.25.27-.97.95-.97 2.32 0 1.37.99 2.7 1.13 2.89.14.18 1.95 2.98 4.73 4.06.66.28 1.18.45 1.58.57.66.21 1.26.18 1.73.11.53-.08 1.65-.67 1.89-1.32.23-.65.23-1.2.16-1.32-.07-.12-.25-.18-.53-.32z"
+                />
+              </svg>
+              Message on WhatsApp
+            </a>
+            <span class="text-gray-500 text-sm"
+              >or WhatsApp: +998 90 999 99 99</span
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-100 text-gray-500 py-8">
+      <div class="container mx-auto px-6 text-center">
+        <p>&copy; 2025 To'rabek's Uzbekistan Tours. All rights reserved.</p>
+        <p class="text-sm mt-2">Designed with energy in Samarkand.</p>
+      </div>
+    </footer>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      // Initialize AOS
+      AOS.init({
+        duration: 800, // values from 0 to 3000, with step 50ms
+        once: true, // whether animation should happen only once - while scrolling down
+      });
+
+      // Mobile menu toggle
+      const mobileMenuButton = document.getElementById('mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+      mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+      mobileMenu.addEventListener('click', event => {
+        if (event.target.tagName === 'A') {
+          mobileMenu.classList.add('hidden');
+        }
+      });
+
+      // Change navbar style on scroll
+      const header = document.getElementById('header');
+      const navLogo = document.getElementById('nav-logo');
+      const navLinks = [
+        document.getElementById('nav-link-1'),
+        document.getElementById('nav-link-2'),
+        document.getElementById('nav-link-3'),
+        document.getElementById('nav-link-4'),
+      ];
+
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+          header.classList.add('glass-nav', 'shadow-md');
+        } else {
+          header.classList.remove('glass-nav', 'shadow-md');
+        }
+      });
+
+      // Fill in star SVGs (they were removed for brevity in the card code)
+      document.querySelectorAll('.star-rating').forEach(el => {
+        el.innerHTML = `
+                <svg fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                <svg fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                <svg fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                <svg fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                <svg fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+            `;
+        // For the 4.5 star review, find the last one and replace it
+        if (el.parentElement.textContent.includes('Ben and Maria')) {
+          el.innerHTML = el.innerHTML.replace(
+            /<svg fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"\/><\/svg>$/,
+            '<svg fill="currentColor" viewBox="0 0 20 20"><path d="M10 12.33l-3.623 1.905 0.692-4.035L3.38 7.373l4.051-0.589L10 3.25l1.81 3.535 4.051 0.589-2.93 2.827 0.692 4.035L10 12.33z"/></svg>'
+          );
+        }
+      });
+    </script>
+  </body>
+</html>
